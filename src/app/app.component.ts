@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
+  @ViewChild('myCanvas', { static: false }) myCanvas: ElementRef;
   title = 'xCanvas';
   imgSrc = '';
 
@@ -30,9 +31,9 @@ export class AppComponent {
   drawImage(img) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    const width = 32,
-      height = 32,
-      size = 10;
+    const width = img.width / 10,
+      height = img.height / 10,
+      size = 5;
     canvas.width = width * size;
     canvas.height = height * size;
     let w = img.width,
