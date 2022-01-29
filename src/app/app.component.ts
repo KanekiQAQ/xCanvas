@@ -31,9 +31,9 @@ export class AppComponent {
   drawImage(img) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    const width = img.width / 10,
-      height = img.height / 10,
-      size = 5;
+    const size = 10,
+      width = 64,
+      height = 64;
     canvas.width = width * size;
     canvas.height = height * size;
     let w = img.width,
