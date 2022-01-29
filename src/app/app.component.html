@@ -1,0 +1,7 @@
+<input
+  type="file"
+  accept=".jpeg,.jpg,.png"
+  (change)="fileChange($event.target.files)"
+/>
+<br />
+<img *ngIf="imgSrc" [src]="imgSrc" />
